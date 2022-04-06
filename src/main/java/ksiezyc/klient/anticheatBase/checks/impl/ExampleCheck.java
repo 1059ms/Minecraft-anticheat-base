@@ -3,6 +3,7 @@ package ksiezyc.klient.anticheatBase.checks.impl;
 import io.github.retrooper.packetevents.event.impl.PacketPlayReceiveEvent;
 import ksiezyc.klient.anticheatBase.checks.Check;
 import ksiezyc.klient.anticheatBase.util.ChatUtil;
+import ksiezyc.klient.anticheatBase.util.MovementUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,10 +28,14 @@ public class ExampleCheck extends Check {
     @EventHandler
     public void onMove(PlayerMoveEvent event) {
         //Called when player moves
+
+        //Creating movement util
+        MovementUtil util = new MovementUtil(event);
     }
 
 
     //Just examples
+    //You can delete it
     private void examples() {
         Player p = Bukkit.getPlayer("Notch");
 
@@ -39,6 +44,7 @@ public class ExampleCheck extends Check {
 
         //Send message only to players with selected permission (and opped players)
         ChatUtil.sendOnlyPermission("Test", "Anticheat.permission");
+
     }
 
 }
