@@ -1,0 +1,5 @@
+name: AntiCheat-Base
+version: 1.0
+main: ksiezyc.klient.anticheatBase.AntiCheat
+depend:
+  - packetevents
