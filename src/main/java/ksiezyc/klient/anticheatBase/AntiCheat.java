@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AntiCheat extends JavaPlugin implements Listener {
-    public static AntiCheat instance = new AntiCheat();
+    public static AntiCheat instance;
 
     public PacketEvents packetEvents = new PacketEvents();
     public CheckManager checkManager = new CheckManager();
@@ -20,6 +20,7 @@ public class AntiCheat extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        instance = this;
         packetEvents.get().init();
         getServer().getPluginManager().registerEvents(this, this);
         Loop.startLoop();
